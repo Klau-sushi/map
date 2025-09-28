@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95b607535a3500e8b450c0e1eacaf8b5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 280px; height: 120px; 
+     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+     ">&nbsp; <b>医疗资源图例</b><br>
+     &nbsp; <i class="fa fa-circle" style="color:grey"></i>&nbsp; 普通三甲医院<br>
+     &nbsp; <i class="fa fa-circle" style="color:red"></i>&nbsp; “药械通”指定医院 (三甲)<br>
+     &nbsp; <i class="fa fa-circle" style="color:green"></i>&nbsp; “药械通”指定医院 (非三甲)<br>
+     &nbsp; <i class="fa fa-star" style="color:purple"></i>&nbsp; 主要跨境口岸<br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_95b607535a3500e8b450c0e1eacaf8b5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_95b607535a3500e8b450c0e1eacaf8b5 = L.map(
+                "map_95b607535a3500e8b450c0e1eacaf8b5",
+                {
+                    center: [22.54, 114.05],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2f1608982713405eaa118e874f67a405 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2f1608982713405eaa118e874f67a405.addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+        
+    
+            var feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_7d97e1e626b15e56433db6dcedac14e3 = L.circleMarker(
+                [22.6414326931435, 114.131238713895],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_df9c23f21acf06eaee502ece331b39e8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15c33c43149039609393f01b5e74787e = $(`<div id="html_15c33c43149039609393f01b5e74787e" style="width: 100.0%; height: 100.0%;">深圳市第三人民医院<br>(普通三甲)</div>`)[0];
+                popup_df9c23f21acf06eaee502ece331b39e8.setContent(html_15c33c43149039609393f01b5e74787e);
+            
+        
+
+        circle_marker_7d97e1e626b15e56433db6dcedac14e3.bindPopup(popup_df9c23f21acf06eaee502ece331b39e8)
+        ;
+
+        
+    
+    
+            var circle_marker_d4d2e098e582908537c84fe5f81af616 = L.circleMarker(
+                [22.5533099231644, 114.060788744976],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_f68055a034bd9c9c383ce89e4474d65f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb0d5e507deee0d28ead1ffc71888f42 = $(`<div id="html_eb0d5e507deee0d28ead1ffc71888f42" style="width: 100.0%; height: 100.0%;">深圳市儿童医院<br>(普通三甲)</div>`)[0];
+                popup_f68055a034bd9c9c383ce89e4474d65f.setContent(html_eb0d5e507deee0d28ead1ffc71888f42);
+            
+        
+
+        circle_marker_d4d2e098e582908537c84fe5f81af616.bindPopup(popup_f68055a034bd9c9c383ce89e4474d65f)
+        ;
+
+        
+    
+    
+            var circle_marker_e864b50cfa754165be82715ee8500e59 = L.circleMarker(
+                [22.5243473660719, 114.055381125469],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_75650cac668d5888ed04e7c1637ef754 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b4e86482fb662ce50e3e99697f713370 = $(`<div id="html_b4e86482fb662ce50e3e99697f713370" style="width: 100.0%; height: 100.0%;">深圳市妇幼保健院<br>(普通三甲)</div>`)[0];
+                popup_75650cac668d5888ed04e7c1637ef754.setContent(html_b4e86482fb662ce50e3e99697f713370);
+            
+        
+
+        circle_marker_e864b50cfa754165be82715ee8500e59.bindPopup(popup_75650cac668d5888ed04e7c1637ef754)
+        ;
+
+        
+    
+    
+            var circle_marker_0a9b480f0012fa22791401f3a7325928 = L.circleMarker(
+                [22.7345239633951, 114.241221042193],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_ea95f78d24ee306a663262cb2ac4917b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_64303b8fb97dfd76ad4a7d95a22a3535 = $(`<div id="html_64303b8fb97dfd76ad4a7d95a22a3535" style="width: 100.0%; height: 100.0%;">深圳市龙岗区妇幼保健院<br>(普通三甲)</div>`)[0];
+                popup_ea95f78d24ee306a663262cb2ac4917b.setContent(html_64303b8fb97dfd76ad4a7d95a22a3535);
+            
+        
+
+        circle_marker_0a9b480f0012fa22791401f3a7325928.bindPopup(popup_ea95f78d24ee306a663262cb2ac4917b)
+        ;
+
+        
+    
+    
+            var circle_marker_70856f9bc968cd41359a97f5d02772cc = L.circleMarker(
+                [22.6684789783375, 114.31105603116],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_cf0e8588529613a0ac7fd54cb6250464 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c5ca1ee153dcf81edcaea3175958cc2d = $(`<div id="html_c5ca1ee153dcf81edcaea3175958cc2d" style="width: 100.0%; height: 100.0%;">深圳市康宁医院<br>(普通三甲)</div>`)[0];
+                popup_cf0e8588529613a0ac7fd54cb6250464.setContent(html_c5ca1ee153dcf81edcaea3175958cc2d);
+            
+        
+
+        circle_marker_70856f9bc968cd41359a97f5d02772cc.bindPopup(popup_cf0e8588529613a0ac7fd54cb6250464)
+        ;
+
+        
+    
+    
+            var circle_marker_cf3cf096d38109161cdcea1e669aee76 = L.circleMarker(
+                [22.7095100373552, 114.237755020214],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_14becd3ca4eda4a89bcfd311aaf228d6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_90b7df3795aa58bebcdfcccb63b404b9 = $(`<div id="html_90b7df3795aa58bebcdfcccb63b404b9" style="width: 100.0%; height: 100.0%;">深圳龙城医院<br>(普通三甲)</div>`)[0];
+                popup_14becd3ca4eda4a89bcfd311aaf228d6.setContent(html_90b7df3795aa58bebcdfcccb63b404b9);
+            
+        
+
+        circle_marker_cf3cf096d38109161cdcea1e669aee76.bindPopup(popup_14becd3ca4eda4a89bcfd311aaf228d6)
+        ;
+
+        
+    
+    
+            var circle_marker_5162ad0fa4ed04bf06d700892db71365 = L.circleMarker(
+                [39.9310830735491, 116.356744007599],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_6fb9e0d506263edf598558fa99890a39 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_83e205a19909f951cc3c946a71de7c02 = $(`<div id="html_83e205a19909f951cc3c946a71de7c02" style="width: 100.0%; height: 100.0%;">中国医学科学院阜外医院深圳医院<br>(普通三甲)</div>`)[0];
+                popup_6fb9e0d506263edf598558fa99890a39.setContent(html_83e205a19909f951cc3c946a71de7c02);
+            
+        
+
+        circle_marker_5162ad0fa4ed04bf06d700892db71365.bindPopup(popup_6fb9e0d506263edf598558fa99890a39)
+        ;
+
+        
+    
+    
+            var circle_marker_f53c6b07c980a615284f02771d730cce = L.circleMarker(
+                [22.5523824535369, 114.020782529442],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_29293dcc392767540a70eec533bc04af = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7a5943058904498293020527edf10a0f = $(`<div id="html_7a5943058904498293020527edf10a0f" style="width: 100.0%; height: 100.0%;">深圳市眼科医院<br>(普通三甲)</div>`)[0];
+                popup_29293dcc392767540a70eec533bc04af.setContent(html_7a5943058904498293020527edf10a0f);
+            
+        
+
+        circle_marker_f53c6b07c980a615284f02771d730cce.bindPopup(popup_29293dcc392767540a70eec533bc04af)
+        ;
+
+        
+    
+    
+            var circle_marker_a6c4ebfc9fd72c06c5b62986b1bf4949 = L.circleMarker(
+                [22.7384251540441, 113.811866311972],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_8392ba3e0faa64101993b5647277da9b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a58701b7d6914ab8143585e965e87959 = $(`<div id="html_a58701b7d6914ab8143585e965e87959" style="width: 100.0%; height: 100.0%;">深圳市中西医结合医院<br>(普通三甲)</div>`)[0];
+                popup_8392ba3e0faa64101993b5647277da9b.setContent(html_a58701b7d6914ab8143585e965e87959);
+            
+        
+
+        circle_marker_a6c4ebfc9fd72c06c5b62986b1bf4949.bindPopup(popup_8392ba3e0faa64101993b5647277da9b)
+        ;
+
+        
+    
+    
+            var circle_marker_54b970fcc48aaea740946f5963231350 = L.circleMarker(
+                [22.5781460723654, 113.905825654723],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_07a7924cf187e4642b1c18d08ff3870e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb5f9626c1d0d3f50456b49c4130fa54 = $(`<div id="html_bb5f9626c1d0d3f50456b49c4130fa54" style="width: 100.0%; height: 100.0%;">深圳市中医院<br>(普通三甲)</div>`)[0];
+                popup_07a7924cf187e4642b1c18d08ff3870e.setContent(html_bb5f9626c1d0d3f50456b49c4130fa54);
+            
+        
+
+        circle_marker_54b970fcc48aaea740946f5963231350.bindPopup(popup_07a7924cf187e4642b1c18d08ff3870e)
+        ;
+
+        
+    
+    
+            var circle_marker_0d79f42dae7a68a45d95230c11d347f9 = L.circleMarker(
+                [22.6457064667832, 114.237521820104],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_f30b534f36fa10bb6d87c0d754a0f78e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_19194472329802185962bd873f8099c9 = $(`<div id="html_19194472329802185962bd873f8099c9" style="width: 100.0%; height: 100.0%;">北京中医药大学深圳医院（龙岗）<br>(普通三甲)</div>`)[0];
+                popup_f30b534f36fa10bb6d87c0d754a0f78e.setContent(html_19194472329802185962bd873f8099c9);
+            
+        
+
+        circle_marker_0d79f42dae7a68a45d95230c11d347f9.bindPopup(popup_f30b534f36fa10bb6d87c0d754a0f78e)
+        ;
+
+        
+    
+    
+            var circle_marker_d5482d06427467e50a5bb75ba3047fc2 = L.circleMarker(
+                [22.5668777947467, 114.150491916223],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_a3e22cb0e84e5936e0709a765f624a29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5c80cefa4c8e1d1004e6522fd7eba37c = $(`<div id="html_5c80cefa4c8e1d1004e6522fd7eba37c" style="width: 100.0%; height: 100.0%;">深圳市罗湖区中医院<br>(普通三甲)</div>`)[0];
+                popup_a3e22cb0e84e5936e0709a765f624a29.setContent(html_5c80cefa4c8e1d1004e6522fd7eba37c);
+            
+        
+
+        circle_marker_d5482d06427467e50a5bb75ba3047fc2.bindPopup(popup_a3e22cb0e84e5936e0709a765f624a29)
+        ;
+
+        
+    
+    
+            var circle_marker_f8f7bd7f10f062ab593cd89d66e37359 = L.circleMarker(
+                [22.5650234509423, 114.048840832545],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_5f82cd792d64ce727290a62c54f8b295 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f644c7d2bdb7d9b84626f17efe12d22 = $(`<div id="html_1f644c7d2bdb7d9b84626f17efe12d22" style="width: 100.0%; height: 100.0%;">广州中医药大学深圳医院（福田）<br>(普通三甲)</div>`)[0];
+                popup_5f82cd792d64ce727290a62c54f8b295.setContent(html_1f644c7d2bdb7d9b84626f17efe12d22);
+            
+        
+
+        circle_marker_f8f7bd7f10f062ab593cd89d66e37359.bindPopup(popup_5f82cd792d64ce727290a62c54f8b295)
+        ;
+
+        
+    
+    
+            var circle_marker_c1b7cc8374adfc5a7585cd5309ab211d = L.circleMarker(
+                [22.5781460723654, 113.905825654723],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_5306098ddd40f298cfe76383ce8267ec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_306cfc7285bcc273c4c36fe50800b90a = $(`<div id="html_306cfc7285bcc273c4c36fe50800b90a" style="width: 100.0%; height: 100.0%;">深圳市宝安区中医院<br>(普通三甲)</div>`)[0];
+                popup_5306098ddd40f298cfe76383ce8267ec.setContent(html_306cfc7285bcc273c4c36fe50800b90a);
+            
+        
+
+        circle_marker_c1b7cc8374adfc5a7585cd5309ab211d.bindPopup(popup_5306098ddd40f298cfe76383ce8267ec)
+        ;
+
+        
+    
+    
+            var circle_marker_55237d9d9990f0f8480f05a086851fa8 = L.circleMarker(
+                [22.7007885034905, 114.257215910776],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_4bb9bd128af766ff965dd785d5ff5001 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5f320c69e8c9a3c12adf250478a0baaa = $(`<div id="html_5f320c69e8c9a3c12adf250478a0baaa" style="width: 100.0%; height: 100.0%;">中国医学科学院肿瘤医院深圳医院<br>(普通三甲)</div>`)[0];
+                popup_4bb9bd128af766ff965dd785d5ff5001.setContent(html_5f320c69e8c9a3c12adf250478a0baaa);
+            
+        
+
+        circle_marker_55237d9d9990f0f8480f05a086851fa8.bindPopup(popup_4bb9bd128af766ff965dd785d5ff5001)
+        ;
+
+        
+    
+    
+            var circle_marker_e5ac5fec1d44f6954d5998db9f2cd3a1 = L.circleMarker(
+                [22.6618992557535, 114.039746836718],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_8cc03d1861c84f7bf5bf5db07ab03160 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e3ad5700657cb55a4e689d50d4d2fe4c = $(`<div id="html_e3ad5700657cb55a4e689d50d4d2fe4c" style="width: 100.0%; height: 100.0%;">深圳市龙华区人民医院<br>(普通三甲)</div>`)[0];
+                popup_8cc03d1861c84f7bf5bf5db07ab03160.setContent(html_e3ad5700657cb55a4e689d50d4d2fe4c);
+            
+        
+
+        circle_marker_e5ac5fec1d44f6954d5998db9f2cd3a1.bindPopup(popup_8cc03d1861c84f7bf5bf5db07ab03160)
+        ;
+
+        
+    
+    
+            var circle_marker_697a116769e6f3c7ecdb769474280a8d = L.circleMarker(
+                [22.7922425161832, 113.958510644052],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_a7ac6cdefb8201b071fe9e5f74b2f234 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_01d241e685bc7d335aaf01a141872007 = $(`<div id="html_01d241e685bc7d335aaf01a141872007" style="width: 100.0%; height: 100.0%;">中山大学附属第七医院（深圳）<br>(普通三甲)</div>`)[0];
+                popup_a7ac6cdefb8201b071fe9e5f74b2f234.setContent(html_01d241e685bc7d335aaf01a141872007);
+            
+        
+
+        circle_marker_697a116769e6f3c7ecdb769474280a8d.bindPopup(popup_a7ac6cdefb8201b071fe9e5f74b2f234)
+        ;
+
+        
+    
+    
+            var circle_marker_32f0f0dff5bc61a5c1b7fe92d1c28242 = L.circleMarker(
+                [22.7326609918109, 114.234236986347],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_9e095cc57a11cffc328e6887b190a2b2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7e27f6fbb1f6763427b226fe2ecd0c2b = $(`<div id="html_7e27f6fbb1f6763427b226fe2ecd0c2b" style="width: 100.0%; height: 100.0%;">深圳市龙岗中心医院<br>(普通三甲)</div>`)[0];
+                popup_9e095cc57a11cffc328e6887b190a2b2.setContent(html_7e27f6fbb1f6763427b226fe2ecd0c2b);
+            
+        
+
+        circle_marker_32f0f0dff5bc61a5c1b7fe92d1c28242.bindPopup(popup_9e095cc57a11cffc328e6887b190a2b2)
+        ;
+
+        
+    
+    
+            var circle_marker_cb17364d55b20ea5ef5b0c58d1c587f4 = L.circleMarker(
+                [22.8019541309769, 113.898070762919],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_983a4dcfd0f50478a2db76969ea29c0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8e34a1f26893c9a6bceca47cabffb52a = $(`<div id="html_8e34a1f26893c9a6bceca47cabffb52a" style="width: 100.0%; height: 100.0%;">深圳市光明区人民医院<br>(普通三甲)</div>`)[0];
+                popup_983a4dcfd0f50478a2db76969ea29c0d.setContent(html_8e34a1f26893c9a6bceca47cabffb52a);
+            
+        
+
+        circle_marker_cb17364d55b20ea5ef5b0c58d1c587f4.bindPopup(popup_983a4dcfd0f50478a2db76969ea29c0d)
+        ;
+
+        
+    
+    
+            var circle_marker_a3bb4bae4ec9fdbd0b2ad3e26f358cc8 = L.circleMarker(
+                [22.7326609918109, 114.234236986347],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_e740284c899b12b957090371c5db1dac = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_389fba369456f5d9d6678afb4c609c0f = $(`<div id="html_389fba369456f5d9d6678afb4c609c0f" style="width: 100.0%; height: 100.0%;">深圳市龙岗区人民医院<br>(普通三甲)</div>`)[0];
+                popup_e740284c899b12b957090371c5db1dac.setContent(html_389fba369456f5d9d6678afb4c609c0f);
+            
+        
+
+        circle_marker_a3bb4bae4ec9fdbd0b2ad3e26f358cc8.bindPopup(popup_e740284c899b12b957090371c5db1dac)
+        ;
+
+        
+    
+    
+            var circle_marker_a2216e69642f3f4db519ab259f6b37ef = L.circleMarker(
+                [22.6171675648498, 114.074362770042],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_2a14fa365cc0dcfc73abc0d9dd022687 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_470e4f3b1a591532275895669d4fbac1 = $(`<div id="html_470e4f3b1a591532275895669d4fbac1" style="width: 100.0%; height: 100.0%;">深圳市第二人民医院<br>(普通三甲)</div>`)[0];
+                popup_2a14fa365cc0dcfc73abc0d9dd022687.setContent(html_470e4f3b1a591532275895669d4fbac1);
+            
+        
+
+        circle_marker_a2216e69642f3f4db519ab259f6b37ef.bindPopup(popup_2a14fa365cc0dcfc73abc0d9dd022687)
+        ;
+
+        
+    
+    
+            var circle_marker_7a677aea9422af8206e160be5ce91759 = L.circleMarker(
+                [22.7007885034905, 114.257215910776],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_522846af06fc6c0eb3eb8adb73762e63 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_479ab53429637cd38f4a65e7db507ef2 = $(`<div id="html_479ab53429637cd38f4a65e7db507ef2" style="width: 100.0%; height: 100.0%;">华中科技大学协和深圳医院<br>(普通三甲)</div>`)[0];
+                popup_522846af06fc6c0eb3eb8adb73762e63.setContent(html_479ab53429637cd38f4a65e7db507ef2);
+            
+        
+
+        circle_marker_7a677aea9422af8206e160be5ce91759.bindPopup(popup_522846af06fc6c0eb3eb8adb73762e63)
+        ;
+
+        
+    
+    
+            var circle_marker_738eb3c115a9c371f0d02e1479796f69 = L.circleMarker(
+                [22.5364198925694, 114.07775872419],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_a64b2a718bbb33dc1554c4a487a4c666 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d52bf62ff5350f027a66f53e0bd560fd = $(`<div id="html_d52bf62ff5350f027a66f53e0bd560fd" style="width: 100.0%; height: 100.0%;">中山大学附属第八医院<br>(普通三甲)</div>`)[0];
+                popup_a64b2a718bbb33dc1554c4a487a4c666.setContent(html_d52bf62ff5350f027a66f53e0bd560fd);
+            
+        
+
+        circle_marker_738eb3c115a9c371f0d02e1479796f69.bindPopup(popup_a64b2a718bbb33dc1554c4a487a4c666)
+        ;
+
+        
+    
+    
+            var circle_marker_73b8fa856521e7d4bd87098077dcf9b6 = L.circleMarker(
+                [22.7326609918109, 114.234236986347],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_3a622b06ba559c843974c1d876fa744d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3a670cfda2453cb34832375be788b8a7 = $(`<div id="html_3a670cfda2453cb34832375be788b8a7" style="width: 100.0%; height: 100.0%;">深圳市人民医院<br>(普通三甲)</div>`)[0];
+                popup_3a622b06ba559c843974c1d876fa744d.setContent(html_3a670cfda2453cb34832375be788b8a7);
+            
+        
+
+        circle_marker_73b8fa856521e7d4bd87098077dcf9b6.bindPopup(popup_3a622b06ba559c843974c1d876fa744d)
+        ;
+
+        
+    
+    
+            var circle_marker_614c16fe6d15e39d4695d3912f85f75d = L.circleMarker(
+                [22.5677069640296, 113.921362028174],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_802c3154157fe4275c02fa76ba150048 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b85b2c3329f4110d0bee8097c4cc978 = $(`<div id="html_8b85b2c3329f4110d0bee8097c4cc978" style="width: 100.0%; height: 100.0%;">深圳市宝安区人民医院<br>(普通三甲)</div>`)[0];
+                popup_802c3154157fe4275c02fa76ba150048.setContent(html_8b85b2c3329f4110d0bee8097c4cc978);
+            
+        
+
+        circle_marker_614c16fe6d15e39d4695d3912f85f75d.bindPopup(popup_802c3154157fe4275c02fa76ba150048)
+        ;
+
+        
+    
+    
+            var circle_marker_491e0de20163b301f7f9106c160280f4 = L.circleMarker(
+                [22.7188582361376, 114.052600061442],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_0c7cd87e54380d9625864c0c5797796c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4437a61f533b03cc3c15abbcb9cc9e9e = $(`<div id="html_4437a61f533b03cc3c15abbcb9cc9e9e" style="width: 100.0%; height: 100.0%;">深圳市龙华区中心医院<br>(普通三甲)</div>`)[0];
+                popup_0c7cd87e54380d9625864c0c5797796c.setContent(html_4437a61f533b03cc3c15abbcb9cc9e9e);
+            
+        
+
+        circle_marker_491e0de20163b301f7f9106c160280f4.bindPopup(popup_0c7cd87e54380d9625864c0c5797796c)
+        ;
+
+        
+    
+    
+            var circle_marker_baa80e27b92d2572cd5ae8d3b53b147c = L.circleMarker(
+                [22.4931663093898, 113.936974847424],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_26408a71579a92e6fc0dfba0806c8e46 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aa1c544b94b8bec4293662a02d3faa5b = $(`<div id="html_aa1c544b94b8bec4293662a02d3faa5b" style="width: 100.0%; height: 100.0%;">深圳市南山区妇幼保健院<br>(普通三甲)</div>`)[0];
+                popup_26408a71579a92e6fc0dfba0806c8e46.setContent(html_aa1c544b94b8bec4293662a02d3faa5b);
+            
+        
+
+        circle_marker_baa80e27b92d2572cd5ae8d3b53b147c.bindPopup(popup_26408a71579a92e6fc0dfba0806c8e46)
+        ;
+
+        
+    
+    
+            var circle_marker_b08f34d3da593489b558e87716a6451e = L.circleMarker(
+                [22.711316069278, 114.362840289554],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_c46f277ac19cb71d451acb68dd257052 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b028968642fb012e7961f9628691b991 = $(`<div id="html_b028968642fb012e7961f9628691b991" style="width: 100.0%; height: 100.0%;">深圳平乐骨伤科医院<br>(普通三甲)</div>`)[0];
+                popup_c46f277ac19cb71d451acb68dd257052.setContent(html_b028968642fb012e7961f9628691b991);
+            
+        
+
+        circle_marker_b08f34d3da593489b558e87716a6451e.bindPopup(popup_c46f277ac19cb71d451acb68dd257052)
+        ;
+
+        
+    
+    
+            var circle_marker_2d2c95bf18a906c174b2f7d191abfc2e = L.circleMarker(
+                [23.1399007730035, 113.347752189037],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_7b5e5eec9c72fd5223c17b8a9b38fc3a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d5e73d5f72cd917bc244f1009b1d459b = $(`<div id="html_d5e73d5f72cd917bc244f1009b1d459b" style="width: 100.0%; height: 100.0%;">中山大学附属第三医院（岭南医院）<br>(普通三甲)</div>`)[0];
+                popup_7b5e5eec9c72fd5223c17b8a9b38fc3a.setContent(html_d5e73d5f72cd917bc244f1009b1d459b);
+            
+        
+
+        circle_marker_2d2c95bf18a906c174b2f7d191abfc2e.bindPopup(popup_7b5e5eec9c72fd5223c17b8a9b38fc3a)
+        ;
+
+        
+    
+    
+            var circle_marker_5892cad0cc1cf4f6bffc54b8dcdac70c = L.circleMarker(
+                [22.8046720183702, 113.957899975967],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_8c54ff2f121cff6c397a816604cdb05a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b7ac99b1dfb0f7cbf051e042e0d91c88 = $(`<div id="html_b7ac99b1dfb0f7cbf051e042e0d91c88" style="width: 100.0%; height: 100.0%;">中山大学附属第六医院（深圳院区）<br>(普通三甲)</div>`)[0];
+                popup_8c54ff2f121cff6c397a816604cdb05a.setContent(html_b7ac99b1dfb0f7cbf051e042e0d91c88);
+            
+        
+
+        circle_marker_5892cad0cc1cf4f6bffc54b8dcdac70c.bindPopup(popup_8c54ff2f121cff6c397a816604cdb05a)
+        ;
+
+        
+    
+    
+            var circle_marker_8760f30e471ce423550f843f6ff37c32 = L.circleMarker(
+                [22.5759112877779, 113.91029586445],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_a0d19f0e3e8005d8e4b6a228ca9b16d0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0c4799725d7211af0308a9d3483a5b0 = $(`<div id="html_e0c4799725d7211af0308a9d3483a5b0" style="width: 100.0%; height: 100.0%;">中山大学中山眼科中心（深圳）<br>(普通三甲)</div>`)[0];
+                popup_a0d19f0e3e8005d8e4b6a228ca9b16d0.setContent(html_e0c4799725d7211af0308a9d3483a5b0);
+            
+        
+
+        circle_marker_8760f30e471ce423550f843f6ff37c32.bindPopup(popup_a0d19f0e3e8005d8e4b6a228ca9b16d0)
+        ;
+
+        
+    
+    
+            var circle_marker_76d4d7873f9dd3f89bf0ffd1cc4d7e01 = L.circleMarker(
+                [22.8046720183702, 113.957899975967],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_3fb7ef60fcc7303bda587fdbcd87af37 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2b7047e11fcc255b3a6ddf9752dda269 = $(`<div id="html_2b7047e11fcc255b3a6ddf9752dda269" style="width: 100.0%; height: 100.0%;">中山大学肿瘤防治中心（深圳）<br>(普通三甲)</div>`)[0];
+                popup_3fb7ef60fcc7303bda587fdbcd87af37.setContent(html_2b7047e11fcc255b3a6ddf9752dda269);
+            
+        
+
+        circle_marker_76d4d7873f9dd3f89bf0ffd1cc4d7e01.bindPopup(popup_3fb7ef60fcc7303bda587fdbcd87af37)
+        ;
+
+        
+    
+    
+            var circle_marker_f85d6463357b924b62d74a2066a2f971 = L.circleMarker(
+                [22.5458095463257, 113.992416556701],
+                {"bubblingMouseEvents": true, "color": "grey", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "grey", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e);
+        
+    
+        var popup_c04f12fd0c322b647fd502655b74d073 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_61c3e4e072024a0547c963a91c3d248a = $(`<div id="html_61c3e4e072024a0547c963a91c3d248a" style="width: 100.0%; height: 100.0%;">暨南大学附属第一医院（深圳）<br>(普通三甲)</div>`)[0];
+                popup_c04f12fd0c322b647fd502655b74d073.setContent(html_61c3e4e072024a0547c963a91c3d248a);
+            
+        
+
+        circle_marker_f85d6463357b924b62d74a2066a2f971.bindPopup(popup_c04f12fd0c322b647fd502655b74d073)
+        ;
+
+        
+    
+    
+            feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e.addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+        
+    
+            var feature_group_75828734bb2d508b56be0385421f3817 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_e6fb8c8b03c9c0936ce008d8a55f562b = L.circleMarker(
+                [22.5682630502828, 113.883182247402],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_75828734bb2d508b56be0385421f3817);
+        
+    
+        var popup_20c2fa0cbfefcd6698e478ace743092a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_216ebd80da7fd719dbee67cf5df86dc8 = $(`<div id="html_216ebd80da7fd719dbee67cf5df86dc8" style="width: 100.0%; height: 100.0%;"><strong>深圳市宝安区妇幼保健院</strong><br>(药械通指定-三甲)</div>`)[0];
+                popup_20c2fa0cbfefcd6698e478ace743092a.setContent(html_216ebd80da7fd719dbee67cf5df86dc8);
+            
+        
+
+        circle_marker_e6fb8c8b03c9c0936ce008d8a55f562b.bindPopup(popup_20c2fa0cbfefcd6698e478ace743092a)
+        ;
+
+        
+    
+    
+            var circle_marker_9ee29cc94354785576dbc582b2bb5792 = L.circleMarker(
+                [22.5502492911817, 113.902701887144],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_75828734bb2d508b56be0385421f3817);
+        
+    
+        var popup_e204cbe8d6fc483928ca3b7e3fb88991 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bdf16eee0a03248f68485ae16077d1da = $(`<div id="html_bdf16eee0a03248f68485ae16077d1da" style="width: 100.0%; height: 100.0%;"><strong>南方医科大学深圳医院</strong><br>(药械通指定-三甲)</div>`)[0];
+                popup_e204cbe8d6fc483928ca3b7e3fb88991.setContent(html_bdf16eee0a03248f68485ae16077d1da);
+            
+        
+
+        circle_marker_9ee29cc94354785576dbc582b2bb5792.bindPopup(popup_e204cbe8d6fc483928ca3b7e3fb88991)
+        ;
+
+        
+    
+    
+            var circle_marker_03c5820a95e428a267d912054106178c = L.circleMarker(
+                [22.5639341112735, 114.134228274632],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_75828734bb2d508b56be0385421f3817);
+        
+    
+        var popup_f04048869eedfb2babe8e0f9dca9176b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_57180694b661aaa1c9581d6370696e3a = $(`<div id="html_57180694b661aaa1c9581d6370696e3a" style="width: 100.0%; height: 100.0%;"><strong>深圳市罗湖区人民医院</strong><br>(药械通指定-三甲)</div>`)[0];
+                popup_f04048869eedfb2babe8e0f9dca9176b.setContent(html_57180694b661aaa1c9581d6370696e3a);
+            
+        
+
+        circle_marker_03c5820a95e428a267d912054106178c.bindPopup(popup_f04048869eedfb2babe8e0f9dca9176b)
+        ;
+
+        
+    
+    
+            var circle_marker_5bf4b9401c4caf2f4515806ed0d4edb9 = L.circleMarker(
+                [22.5319526580744, 114.002663617481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_75828734bb2d508b56be0385421f3817);
+        
+    
+        var popup_6e8c227933b94ef6826bbeccd0669705 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4f19fc50c42ac9a3d2e846ec8fd6b9d4 = $(`<div id="html_4f19fc50c42ac9a3d2e846ec8fd6b9d4" style="width: 100.0%; height: 100.0%;"><strong>香港大学深圳医院</strong><br>(药械通指定-三甲)</div>`)[0];
+                popup_6e8c227933b94ef6826bbeccd0669705.setContent(html_4f19fc50c42ac9a3d2e846ec8fd6b9d4);
+            
+        
+
+        circle_marker_5bf4b9401c4caf2f4515806ed0d4edb9.bindPopup(popup_6e8c227933b94ef6826bbeccd0669705)
+        ;
+
+        
+    
+    
+            var circle_marker_6965fb034864ac9160be275b3346a7c5 = L.circleMarker(
+                [22.5623604105851, 114.055655557802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_75828734bb2d508b56be0385421f3817);
+        
+    
+        var popup_5b3f8368dcd53847266df2b10dcc8a0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6237eb839afd115bb1807fe2aac3400f = $(`<div id="html_6237eb839afd115bb1807fe2aac3400f" style="width: 100.0%; height: 100.0%;"><strong>北京大学深圳医院</strong><br>(药械通指定-三甲)</div>`)[0];
+                popup_5b3f8368dcd53847266df2b10dcc8a0d.setContent(html_6237eb839afd115bb1807fe2aac3400f);
+            
+        
+
+        circle_marker_6965fb034864ac9160be275b3346a7c5.bindPopup(popup_5b3f8368dcd53847266df2b10dcc8a0d)
+        ;
+
+        
+    
+    
+            feature_group_75828734bb2d508b56be0385421f3817.addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+        
+    
+            var feature_group_1fb6d81869a0c8e020660da76ee5f997 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_8d090796bcc029c19bc0e934d8786ec1 = L.circleMarker(
+                [22.5203549753391, 113.908987959609],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1fb6d81869a0c8e020660da76ee5f997);
+        
+    
+        var popup_bf995a0b875a07bca39495be72d3100f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7310ebc9f75525d26596373e1109d184 = $(`<div id="html_7310ebc9f75525d26596373e1109d184" style="width: 100.0%; height: 100.0%;"><strong>深圳市前海蛇口自贸区医院</strong><br>(药械通指定-非三甲)</div>`)[0];
+                popup_bf995a0b875a07bca39495be72d3100f.setContent(html_7310ebc9f75525d26596373e1109d184);
+            
+        
+
+        circle_marker_8d090796bcc029c19bc0e934d8786ec1.bindPopup(popup_bf995a0b875a07bca39495be72d3100f)
+        ;
+
+        
+    
+    
+            var circle_marker_2f3e2bc76b4af9cc05457ef877a8cd48 = L.circleMarker(
+                [22.5686918150135, 113.992797258576],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1fb6d81869a0c8e020660da76ee5f997);
+        
+    
+        var popup_8b486f42774792ba3847318f63262ebb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d94c5320dc1db9a1e1463802f2a8aa0d = $(`<div id="html_d94c5320dc1db9a1e1463802f2a8aa0d" style="width: 100.0%; height: 100.0%;"><strong>深圳禾正医院</strong><br>(药械通指定-非三甲)</div>`)[0];
+                popup_8b486f42774792ba3847318f63262ebb.setContent(html_d94c5320dc1db9a1e1463802f2a8aa0d);
+            
+        
+
+        circle_marker_2f3e2bc76b4af9cc05457ef877a8cd48.bindPopup(popup_8b486f42774792ba3847318f63262ebb)
+        ;
+
+        
+    
+    
+            var circle_marker_c7a056a32e3146a5bcb4ffe91cb20a57 = L.circleMarker(
+                [22.5358951384197, 114.030910025758],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1fb6d81869a0c8e020660da76ee5f997);
+        
+    
+        var popup_5f0f01e2cb4f2cb07d0944e0fdef25fc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9c89719ea97e46e20a7053fdbd6f52f6 = $(`<div id="html_9c89719ea97e46e20a7053fdbd6f52f6" style="width: 100.0%; height: 100.0%;"><strong>深圳希玛林顺潮眼科医院</strong><br>(药械通指定-非三甲)</div>`)[0];
+                popup_5f0f01e2cb4f2cb07d0944e0fdef25fc.setContent(html_9c89719ea97e46e20a7053fdbd6f52f6);
+            
+        
+
+        circle_marker_c7a056a32e3146a5bcb4ffe91cb20a57.bindPopup(popup_5f0f01e2cb4f2cb07d0944e0fdef25fc)
+        ;
+
+        
+    
+    
+            var circle_marker_55aa37778d9b532f7d7d30f6dcf93969 = L.circleMarker(
+                [22.5260849188936, 114.05120732858],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1fb6d81869a0c8e020660da76ee5f997);
+        
+    
+        var popup_1884183ad574bd2a05f2e86623f58c29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_db6fa7b1602714308e1ea44fe64fc88d = $(`<div id="html_db6fa7b1602714308e1ea44fe64fc88d" style="width: 100.0%; height: 100.0%;"><strong>深圳新风和睦家医院</strong><br>(药械通指定-非三甲)</div>`)[0];
+                popup_1884183ad574bd2a05f2e86623f58c29.setContent(html_db6fa7b1602714308e1ea44fe64fc88d);
+            
+        
+
+        circle_marker_55aa37778d9b532f7d7d30f6dcf93969.bindPopup(popup_1884183ad574bd2a05f2e86623f58c29)
+        ;
+
+        
+    
+    
+            var circle_marker_aca3a039f583be6dbf3ea92790175a08 = L.circleMarker(
+                [22.5828568957551, 113.858685456153],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1fb6d81869a0c8e020660da76ee5f997);
+        
+    
+        var popup_c7356b7438aea7ce126c648c59379549 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4a2e5fd18f434902057ae88cfb224ef = $(`<div id="html_f4a2e5fd18f434902057ae88cfb224ef" style="width: 100.0%; height: 100.0%;"><strong>深圳恒生医院</strong><br>(药械通指定-非三甲)</div>`)[0];
+                popup_c7356b7438aea7ce126c648c59379549.setContent(html_f4a2e5fd18f434902057ae88cfb224ef);
+            
+        
+
+        circle_marker_aca3a039f583be6dbf3ea92790175a08.bindPopup(popup_c7356b7438aea7ce126c648c59379549)
+        ;
+
+        
+    
+    
+            feature_group_1fb6d81869a0c8e020660da76ee5f997.addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+        
+    
+            var feature_group_24a4f8d03bb07f01819881662b82b3da = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_3c17822b557921a213ed65a201d853df = L.marker(
+                [22.5, 113.95],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_845ad406fcb069f9f209a784c39cb0bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_758b79da5b167fe79409fec743f7ff97 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1eb44e7361b5fb5da298f7b9cb3f7988 = $(`<div id="html_1eb44e7361b5fb5da298f7b9cb3f7988" style="width: 100.0%; height: 100.0%;"><strong>深圳湾口岸</strong></div>`)[0];
+                popup_758b79da5b167fe79409fec743f7ff97.setContent(html_1eb44e7361b5fb5da298f7b9cb3f7988);
+            
+        
+
+        marker_3c17822b557921a213ed65a201d853df.bindPopup(popup_758b79da5b167fe79409fec743f7ff97)
+        ;
+
+        
+    
+    
+                marker_3c17822b557921a213ed65a201d853df.setIcon(icon_845ad406fcb069f9f209a784c39cb0bb);
+            
+    
+            var marker_5be1f10f269dc626043afd98ff33eae4 = L.marker(
+                [22.53, 114.12],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_6125cd23a52faf29fa5382f94f2aa794 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8cc1d11efdd74524c5423fe9ea1116eb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_123d53cbac06d028d6390055e027c50e = $(`<div id="html_123d53cbac06d028d6390055e027c50e" style="width: 100.0%; height: 100.0%;"><strong>罗湖口岸</strong></div>`)[0];
+                popup_8cc1d11efdd74524c5423fe9ea1116eb.setContent(html_123d53cbac06d028d6390055e027c50e);
+            
+        
+
+        marker_5be1f10f269dc626043afd98ff33eae4.bindPopup(popup_8cc1d11efdd74524c5423fe9ea1116eb)
+        ;
+
+        
+    
+    
+                marker_5be1f10f269dc626043afd98ff33eae4.setIcon(icon_6125cd23a52faf29fa5382f94f2aa794);
+            
+    
+            var marker_2ae886dd9e6b57fea768c30496804a21 = L.marker(
+                [22.52, 114.07],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_7aec66b386df9e75a9b8177cafeb74e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bf3f2cbf760e6af742387025a8af1b2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9bb35eb860d1254b8f5da6b33f38b81c = $(`<div id="html_9bb35eb860d1254b8f5da6b33f38b81c" style="width: 100.0%; height: 100.0%;"><strong>福田口岸</strong></div>`)[0];
+                popup_2bf3f2cbf760e6af742387025a8af1b2.setContent(html_9bb35eb860d1254b8f5da6b33f38b81c);
+            
+        
+
+        marker_2ae886dd9e6b57fea768c30496804a21.bindPopup(popup_2bf3f2cbf760e6af742387025a8af1b2)
+        ;
+
+        
+    
+    
+                marker_2ae886dd9e6b57fea768c30496804a21.setIcon(icon_7aec66b386df9e75a9b8177cafeb74e0);
+            
+    
+            var marker_3145c9e90c3b4f2b870a190ee3d3cd47 = L.marker(
+                [22.54, 114.13],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_55a653376b4e3c6532fb13b624b33bcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7261dd157ae8a5cb18e11a9398189223 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9fffc2d1632ff3694686c9199fbf0ea = $(`<div id="html_c9fffc2d1632ff3694686c9199fbf0ea" style="width: 100.0%; height: 100.0%;"><strong>文锦渡口岸</strong></div>`)[0];
+                popup_7261dd157ae8a5cb18e11a9398189223.setContent(html_c9fffc2d1632ff3694686c9199fbf0ea);
+            
+        
+
+        marker_3145c9e90c3b4f2b870a190ee3d3cd47.bindPopup(popup_7261dd157ae8a5cb18e11a9398189223)
+        ;
+
+        
+    
+    
+                marker_3145c9e90c3b4f2b870a190ee3d3cd47.setIcon(icon_55a653376b4e3c6532fb13b624b33bcc);
+            
+    
+            var marker_53c2e4884eb428a00d3f31a1e28da050 = L.marker(
+                [22.54, 114.16],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_d700557d1136b562a5b582f1b532d85f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_622b10d43c616a1f6be48e32cf5d7bc8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_49f5d542feee425aab1109e95f744cf9 = $(`<div id="html_49f5d542feee425aab1109e95f744cf9" style="width: 100.0%; height: 100.0%;"><strong>莲塘口岸</strong></div>`)[0];
+                popup_622b10d43c616a1f6be48e32cf5d7bc8.setContent(html_49f5d542feee425aab1109e95f744cf9);
+            
+        
+
+        marker_53c2e4884eb428a00d3f31a1e28da050.bindPopup(popup_622b10d43c616a1f6be48e32cf5d7bc8)
+        ;
+
+        
+    
+    
+                marker_53c2e4884eb428a00d3f31a1e28da050.setIcon(icon_d700557d1136b562a5b582f1b532d85f);
+            
+    
+            var marker_2df07d7ec9973d3a362d73a3f81e45b0 = L.marker(
+                [22.52, 114.08],
+                {
+}
+            ).addTo(feature_group_24a4f8d03bb07f01819881662b82b3da);
+        
+    
+            var icon_5a10c1143275db5a20b4ddf896b95034 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c683f4e43e1356b2717abf18c0e949d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4e7924521597af763d87680fc0ed734e = $(`<div id="html_4e7924521597af763d87680fc0ed734e" style="width: 100.0%; height: 100.0%;"><strong>皇岗口岸</strong></div>`)[0];
+                popup_3c683f4e43e1356b2717abf18c0e949d.setContent(html_4e7924521597af763d87680fc0ed734e);
+            
+        
+
+        marker_2df07d7ec9973d3a362d73a3f81e45b0.bindPopup(popup_3c683f4e43e1356b2717abf18c0e949d)
+        ;
+
+        
+    
+    
+                marker_2df07d7ec9973d3a362d73a3f81e45b0.setIcon(icon_5a10c1143275db5a20b4ddf896b95034);
+            
+    
+            feature_group_24a4f8d03bb07f01819881662b82b3da.addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+        
+    
+            var layer_control_b1b5aa0b74426fb112efc6f5297cad05_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_2f1608982713405eaa118e874f67a405,
+                },
+                overlays :  {
+                    "\u666e\u901a\u4e09\u7532 (Baseline Tier-A)" : feature_group_ea7d58728a61ff5d0f6c5c914c8ac13e,
+                    "\u836f\u68b0\u901a\u6307\u5b9a-\u4e09\u7532 (Policy Designated - Tier A)" : feature_group_75828734bb2d508b56be0385421f3817,
+                    "\u836f\u68b0\u901a\u6307\u5b9a-\u975e\u4e09\u7532 (Policy Designated - Non Tier A)" : feature_group_1fb6d81869a0c8e020660da76ee5f997,
+                    "\u8de8\u5883\u53e3\u5cb8 (Border Crossings)" : feature_group_24a4f8d03bb07f01819881662b82b3da,
+                },
+            };
+            let layer_control_b1b5aa0b74426fb112efc6f5297cad05 = L.control.layers(
+                layer_control_b1b5aa0b74426fb112efc6f5297cad05_layers.base_layers,
+                layer_control_b1b5aa0b74426fb112efc6f5297cad05_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_95b607535a3500e8b450c0e1eacaf8b5);
+
+        
+</script>
+</html>
